@@ -1,0 +1,18 @@
+from instascrape import *
+import selenium
+from selenium import webdriver
+
+SESSION_ID = '5372761356%3AKBjIknrwXhizoL%3A18%3AAYcdu9ZcsA76M239mrmd4UewOcO-1jHd60AivxlZur0'
+url = f"https://www.instagram.com/virat.kohli/"
+driver = webdriver.Chrome()
+driver.get(url)
+time.sleep(10)
+driver.add_cookie({'name': 'sessionid', 'value': SESSION_ID})
+profile_url = Profile(url)
+
+profile_url.scrape()
+print("Scrape in proces.................. ")
+print("Total follower count is")
+print(profile_url.followers)
+
+url = f"https://www.instagram.com/virat.kohli/"
